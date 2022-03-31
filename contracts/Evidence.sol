@@ -6,7 +6,7 @@ contract Evidence {
   uint public adminCount;
   mapping(string=>string) public evidences;
 
-  event SaveEvidence(string key, string data);
+  event SaveEvidence(string indexed key, string data);
 
   constructor() public {
     admins[msg.sender] = true;
