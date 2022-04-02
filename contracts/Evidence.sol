@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.5.17;
+pragma solidity ^0.7.0;
 
 contract Evidence {
   mapping(address=>bool) public admins;

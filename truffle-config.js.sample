@@ -23,6 +23,10 @@
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
+const PrivateKeyProvider = require("@truffle/hdwallet-provider");
+
+// insert the private key of the account used in metamask eg: Account 1 (Miner Coinbase Account)
+const privateKey = "b9a4bd1539c15bcc83fa9078fe89200b6e9e802ae992f13cd83c853f16e8bed4";
 
 module.exports = {
   /**
@@ -47,6 +51,13 @@ module.exports = {
      port: 7545,            // Standard Ethereum port (default: none)
      network_id: "*",       // Any network (default: none)
     },
+    ott_test: {
+      provider: () => new PrivateKeyProvider(privateKey, "http://127.0.0.1:8545"),
+      network_id: "*",
+      type: "quorum",
+      gasPrice: 0,
+      chainId: 1337
+    }
 
     // Another network with more advanced options...
     // advanced: {
@@ -85,7 +96,7 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      version: "0.5.17",    // Fetch exact version from solc-bin (default: truffle's version)
+      version: "0.7",    // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
       //  optimizer: {
