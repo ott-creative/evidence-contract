@@ -38,6 +38,11 @@ contract Credential {
     admins[admin] = isActive;
   }
 
+  /// @dev 存储加密证书
+  /// @param key 证书持有者唯一标识
+  /// @param cipherData 证书密文数据
+  /// @param pubKeys 可解密查看证书的公钥列表
+  /// @param cipherKeys 对称密钥密文列表，和pubKeys一一对应
   function saveCredential(
     string memory key,
     string memory cipherData,
