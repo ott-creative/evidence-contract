@@ -28,7 +28,6 @@ contract("Credential", accounts => {
     assert.equal(getData[0], cipherData);
     assert.equal(getData[1], cipherKeys[0]);
 
-
     await contract.appendAuthorize(key, ["sss"], ["ooo"]);
     const getData2 = await contract.getCredential(key, "sss");
     assert.equal(getData2[0], cipherData);
