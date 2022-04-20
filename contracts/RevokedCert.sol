@@ -28,6 +28,13 @@ contract RevokedCert {
     _;
   }
 
+  /// @notice 获取撤销证书信息
+  /// @dev 同一证书只能撤销一次
+  /// @param revokedTime 撤销时间，时间戳形式
+  /// @param certType 证书类型
+  /// @param certNo 证书唯一标识
+  /// @param holder 持有者did
+  /// @param issuer 发行者did
   function revoke(
     uint revokedTime,
     bytes32 certType,
@@ -41,6 +48,16 @@ contract RevokedCert {
     emit RevokeCert(certNo, revokedTime, certType, holder, issuer);
   }
 
+  /**
+  * @notice 获取撤销证书信息
+  * @param certNo 证书唯一标识
+  * @return RevokedInfo 该数组有以下元素：
+              - isAcitve：撤销是否有效；
+              - revokedTime 撤销时间；
+              - certType：证书类型；
+              - holder：持有者did；
+              - issuer：发行者did；
+  */
   function getRevokedInfo(string memory certNo) view public returns (RevokedInfo memory) {
     return(revokedCerts[certNo]);
   }
