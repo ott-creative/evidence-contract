@@ -10,13 +10,12 @@ contract RevokedCert {
     bool isAcitve;
     uint revokedTime;
     bytes32 certType;
-    string holder;
     string issuer;
   }
 
   mapping(string=>RevokedInfo) public revokedCerts;
 
-  event RevokeCert(string indexed certNo, uint revokedTime, bytes32 certType, string holder, string issuer);
+  event RevokeCert(string indexed certNo, uint revokedTime, bytes32 certType, string issuer);
 
   constructor() public {
     admins[msg.sender] = true;
@@ -33,19 +32,17 @@ contract RevokedCert {
   /// @param revokedTime 撤销时间，时间戳形式
   /// @param certType 证书类型
   /// @param certNo 证书唯一标识
-  /// @param holder 持有者did
   /// @param issuer 发行者did
   function revoke(
     uint revokedTime,
     bytes32 certType,
     string memory certNo,
-    string memory holder,
     string memory issuer
   ) public onlyAdmin {
     require(revokedCerts[certNo].isAcitve == false, "Certificate has been revoked");
 
-    revokedCerts[certNo] = RevokedInfo(true, revokedTime, certType, holder, issuer);
-    emit RevokeCert(certNo, revokedTime, certType, holder, issuer);
+    revokedCerts[certNo] = RevokedInfo(true, revokedTime, certType, issuer);
+    emit RevokeCert(certNo, revokedTime, certType, issuer);
   }
 
   /**
@@ -55,7 +52,6 @@ contract RevokedCert {
               - isAcitve：撤销是否有效；
               - revokedTime 撤销时间；
               - certType：证书类型；
-              - holder：持有者did；
               - issuer：发行者did；
   */
   function getRevokedInfo(string memory certNo) view public returns (RevokedInfo memory) {

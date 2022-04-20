@@ -3076,11 +3076,17 @@
       "links": {},
       "address": "0xA3211777B08D672f190aD4aA06172f2EA4350EB9",
       "transactionHash": "0x0ab94b61bf474acb265553ef7c71a0ca49dd59c8a9a0a7e2ecd029d0a9ec245d"
+    },
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x3663fF7401c9b96ab1Eb1bf0CdB56FA705431368",
+      "transactionHash": "0xcbf11230d6ebf373d759e963f842f742f4cac4b377a1a05da33bd49bd04bc2ff"
     }
   },
   "schemaVersion": "3.4.6",
-  "updatedAt": "2022-04-11T03:45:19.964Z",
-  "networkType": "quorum",
+  "updatedAt": "2022-04-20T10:10:37.835Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},

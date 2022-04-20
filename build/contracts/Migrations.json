@@ -893,10 +893,16 @@
       "links": {},
       "address": "0x894344A685c494BaB8F1DA3D61a79AED95CC20D0",
       "transactionHash": "0xf6de80e40e646cf39c714816af96d5be303cd07fa8446aa8abef859e97e213cc"
+    },
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xe12F6432496c18d2300319e1E9F463699b857150",
+      "transactionHash": "0xc52d3deabeae1f470a2cb0f5e82fb9933b9df8fd4da847a6fb59ff793aa5f054"
     }
   },
   "schemaVersion": "3.4.6",
-  "updatedAt": "2022-04-20T09:29:07.727Z",
+  "updatedAt": "2022-04-20T10:16:27.946Z",
   "networkType": "quorum",
   "devdoc": {
     "kind": "dev",

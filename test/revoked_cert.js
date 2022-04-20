@@ -16,21 +16,19 @@ contract("RevokedCert",  accounts =>  {
     const revokedTime = 1650443352;
     const certType = web3.utils.asciiToHex("kyc");
     const certNo = "xxxxxx";
-    const holder = "yyyyyy";
     const issuer = "zzzzzz";
 
     const illegalAdmin = accounts[1];
     await assertThrows(
-      contract.revoke(revokedTime, certType, certNo, holder, issuer, {from: illegalAdmin}),
+      contract.revoke(revokedTime, certType, certNo, issuer, {from: illegalAdmin}),
       "Not Admin"
     )
 
-    await contract.revoke(revokedTime, certType, certNo, holder, issuer);
+    await contract.revoke(revokedTime, certType, certNo, issuer);
     const getData = await contract.getRevokedInfo(certNo);
     assert.equal(getData[0], true);
     assert.equal(getData[1], revokedTime);
-    assert.equal(getData[3], holder);
-    assert.equal(getData[4], issuer);
+    assert.equal(getData[3], issuer);
   });
 });
 
