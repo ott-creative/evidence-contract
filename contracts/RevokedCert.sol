@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.7.0;
-pragma abicoder v2;
 
 contract RevokedCert {
   mapping(address=>bool) public admins;
@@ -54,7 +53,12 @@ contract RevokedCert {
               - certType：证书类型；
               - issuer：发行者did；
   */
-  function getRevokedInfo(string memory certNo) view public returns (RevokedInfo memory) {
-    return(revokedCerts[certNo]);
+  function getRevokedInfo(string memory certNo) view public returns (bool, uint, bytes32, string memory) {
+    return(
+      revokedCerts[certNo].isAcitve,
+      revokedCerts[certNo].revokedTime,
+      revokedCerts[certNo].certType,
+      revokedCerts[certNo].issuer
+    );
   }
 }
