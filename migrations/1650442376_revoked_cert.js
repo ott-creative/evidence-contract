@@ -6,11 +6,12 @@ module.exports = function(deployer) {
 
 // Replacing 'RevokedCert'
 // -----------------------
-// > transaction hash:    0xae8020af1329d99861d251535e04f7629001c50571a8ac998ce6007dc7bc384a
-// > Blocks: 2            Seconds: 9
-// > contract address:    0x29Ded3d061d6845a5E169fcc5Ef526Ae826Ce65d
-// > block number:        174984
-// > block timestamp:     0x6260fe21
+
+// > transaction hash:    0x0853f0ee12530d9417c6eb0a483976720552b10f3523faec7b645e116d498ffe
+// > Blocks: 3            Seconds: 17
+// > contract address:    0x81539C31A4a5DBA71097fC808d6579023b9CBeE1
+// > block number:        84
+// > block timestamp:     0x6273c1b9
 // > account:             0x13A52aaB892e1322e8b52506276363d4754c122e
 // > balance:             0
 // > gas used:            970511 (0xecf0f)

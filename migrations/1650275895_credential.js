@@ -4,13 +4,13 @@ module.exports = function(deployer) {
   deployer.deploy(Credential);
 };
 
-// Deploying 'Credential'
+// Replacing 'Credential'
 // ----------------------
-// > transaction hash:    0x7456ba304dbd8602e574641a630fc39e2af5fa145401daa21525f85d368d5d97
-// > Blocks: 1            Seconds: 9
-// > contract address:    0x76a7e650979fBeDf65dd69324673E6EB8CFe1C02
-// > block number:        136965
-// > block timestamp:     0x625e1792
+// > transaction hash:    0x0c0390a8f24f83198fffedcf69ea04ffe07692006c510f862fca0d16fbaa5286
+// > Blocks: 4            Seconds: 21
+// > contract address:    0x57b7b6F72129F86C1FE37862b241c0e4c752E183
+// > block number:        75
+// > block timestamp:     0x6273c18c
 // > account:             0x13A52aaB892e1322e8b52506276363d4754c122e
 // > balance:             0
 // > gas used:            1462296 (0x165018)
